@@ -16,9 +16,18 @@ FQ-CoDel+ is designed as an improvement over the standard FQ-CoDel algorithm, pr
 
 ## Requirements
 
+- Linux kernel 6.8.0-56-generic or compatible version
 - Linux kernel headers (matching your running kernel)
-- Build tools (make, gcc)
-- Root privileges (for loading the module and applying qdisc)
+- Build tools: make, gcc
+- iproute2 package (for tc command)
+- Root/sudo privileges (for loading the module and applying qdisc)
+- Git (for cloning the repository)
+
+To install dependencies on Ubuntu/Debian:
+```
+sudo apt update
+sudo apt install build-essential linux-headers-$(uname -r) iproute2 git make gcc
+```
 
 ## Directory Structure
 
