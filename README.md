@@ -70,14 +70,21 @@ cd CS-615--Project
 
 ### Using Scripts
 
-1. Load module and apply qdisc:
+
+1. Change Directory
    ```
-   sudo bash scripts/load_module.sh
+   cd scripts
+   ```
+2. Edit "load_module.sh" script and replace "device_name" variable with proper one.
+   
+3. Load module and apply qdisc:
+   ```
+   sudo bash load_module.sh
    ```
 
-2. Unload module and remove qdisc:
+4. Unload module and remove qdisc:
    ```
-   sudo bash scripts/unload_module.sh
+   sudo bash unload_module.sh
    ```
 
 ## Usage
