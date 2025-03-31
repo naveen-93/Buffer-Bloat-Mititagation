@@ -1,8 +1,11 @@
 #!/bin/bash
 # Script to build and load the fq_codel_plus kernel module
 
+#device_name="enp2s0"
+device_name="enp0s3"
+
 echo "=== Building fq_codel_plus module ==="
-cd src
+cd ../src
 make clean
 echo "Cleaned previous build files."
 
@@ -23,14 +26,14 @@ fi
 echo "Module loaded successfully."
 
 echo "=== Applying fqcodel+ qdisc to enp2s0 ==="
-sudo tc qdisc add dev enp2s0 root fqcodel+
+sudo tc qdisc add dev $device_name root fqcodel+
 if [ $? -ne 0 ]; then
     echo "ERROR: Failed to apply qdisc to interface!"
     echo "Removing module..."
     sudo rmmod fq_codel_plus
     exit 1
 fi
-echo "Successfully applied fqcodel+ qdisc to enp2s0."
+echo "Successfully applied fqcodel+ qdisc to $device_name."
 
 cd ..
 
