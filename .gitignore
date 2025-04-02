@@ -1,3 +1,7 @@
+# macOS system files
+.DS_Store
+**/.DS_Store
+
 # Ignore .cmd files in src directory and subdirectories
 src/**/*.cmd
 
