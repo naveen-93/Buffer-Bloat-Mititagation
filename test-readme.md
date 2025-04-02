@@ -1,21 +1,5 @@
 # Linux Kernel Queue Discipline Tester: fqcodel+ Analysis
 
-## Introduction
-
-This project involves the development and testing of a custom Linux kernel network queue discipline (qdisc) module named `fqcodel+`. The initial goal was to create an enhanced version of FQ-CoDel.
-
-Testing was performed using the `flent` network benchmarking tool, specifically the `rrul` (Realtime Response Under Load) test suite, to compare the performance of `fqcodel+` against standard kernel qdiscs (`fq_codel`, `pfifo`, and the system default) under simulated network load.
-
-## The `fqcodel+` Module (Current Implementation)
-
-Based on code analysis and performance testing, the current version of the `fqcodel+` module (as provided in `fq_codel_plus.c`) **implements a simple FIFO (First-In, First-Out) queue with tail drop**.
-
-*   It utilizes a single queue for all traffic.
-*   It drops packets only when the queue reaches a hardcoded packet limit (`MAX_QUEUE_LEN`, determined to be 100 based on comparative tests with `pfifo limit 100`).
-*   It **does not** currently implement Fair Queuing (flow separation/scheduling) or CoDel (Controlled Delay - active latency management based on packet sojourn time) algorithms.
-
-Therefore, despite its name, its behavior is functionally equivalent to `pfifo limit 100`.
-
 ## Testing Methodology
 
 Comparative performance tests were conducted using `flent rrul`.
