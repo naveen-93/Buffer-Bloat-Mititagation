@@ -2,13 +2,19 @@
 .DS_Store
 **/.DS_Store
 
-# Ignore .cmd files in src directory and subdirectories
+# Ignore CMD files
+*.cmd
+src/*.cmd
 src/**/*.cmd
 
-# Ignore .koor files in src directory and subdirectories
+# Ignore KOOR files
+*.koor
+src/*.koor
 src/**/*.koor
 
-# Ignore modules.order files in src directory and subdirectories
+# Ignore modules.order
+modules.order
+src/modules.order
 src/**/modules.order
 
 
