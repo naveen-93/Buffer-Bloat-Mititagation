@@ -17,6 +17,14 @@ modules.order
 src/modules.order
 src/**/modules.order
 
+# Ignore Module.symvers
+Module.symvers
+src/Module.symvers
+src/**/Module.symvers
+
+# Ignore .ko files
+*.ko
+
 
 
 
