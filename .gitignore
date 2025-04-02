@@ -1,0 +1,14 @@
+# Ignore .cmd files in src directory and subdirectories
+src/**/*.cmd
+
+# Ignore .koor files in src directory and subdirectories
+src/**/*.koor
+
+# Ignore modules.order files in src directory and subdirectories
+src/**/modules.order
+
+
+
+
+
+
